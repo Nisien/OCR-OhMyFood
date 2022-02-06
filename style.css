@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap'); /* lien pour importer les polices via Google font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); /* lien pour importer les polices via Google font */
+
+/*
+Polices
+Logo et titres: Shrikhand
+Texte: Roboto
+
+Violet
+#9356DC
+
+Rose
+#FF79DA
+
+Vert
+#99E2D0
+
+Gris
+#F2F2F2
+
+Gris2
+#E6E6E6
+
+Gris3
+#CCCCCC
+*/
+
+body
+{
+	font-family: 'Roboto', sans-serif; /* utilisation de la police roboto pour tous les textes de la page */
+	margin: auto; /* pour centre la page */
+}
+
+h1
+{
+	font-family: 'Shrikhand', cursive; /* utilisation de la police shrikhand pour les titres h1 */
+}
+
+ul
+{
+	list-style-type: none; /* pour enlever les puces devant les listes */
+	padding: 0; /* supprimer le padding naturel des listes */
+}
+
+a
+{
+	text-decoration: none; /* enlever le soulignage des liens */
+	color: black; /* enlever la couleur bleue naturelle des liens en la remplaçant par du noir */
+}
+
+img
+{
+	object-fit: cover; /* pour que les images s'ajustent automatiquement dans le cadre dans lequel elles sont placées */
+}
+
+header
+{
+	display: flex;
+	flex-direction: column; /* utilisation du flex pour positionner les 3 éléments du header en colonnes */
+}
+
+#logo
+{
+	width: 150px; /* taille du logo */
+	margin: auto; /* pour centrer le logo sur le milieu de l'écran */
+	margin-top: 15px;
+	margin-bottom: 15px; /* ajout d'un espace au dessus et en dessous du logo */
+}
+
+.location
+{
+	display: flex;
+	align-items: baseline; /* mettre l'icône et le texte sur la même ligne */
+	justify-content: center; /* pour centre la partie localisation */
+	background-color: #E6E6E6; /* ajout du fond gris */
+	padding: 3px;
+	border-top: 3px solid #CCCCCC; /* ajout de la bordure en haut du cadre un peu plus foncée que le cadre */
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.location i
+{
+	margin-right: 15px; /* séparation de l'icône et du texte */
+}
+
+.info
+{
+	display: flex;
+	flex-direction: column; /* flex pour aligner les éléments en colonnes */
+	background-color: #F2F2F2; /* couleur de fond de la partie info */
+	padding-top: 15px;
+	padding-bottom: 50px;
+}
+
+.info h1
+{
+	text-align: center; /* pour centrer le titre */
+	font-weight: normal;
+	font-size: 25px;
+	margin: 25px 30px 0 30px;
+	line-height: 30px; /* réduire un peu l'écart entre les lignes du titre */
+}
+
+.info p
+{
+	text-align: center; /* pour centre le paragraphe */
+	font-size: 18px;
+	margin: 15px 40px 30px 40px;
+}
+
+button
+{
+	background: linear-gradient(#FF79DA, #9356DC); /* couleur de fond du bouton avec linear-gradient pour un dégrader entre deux couleurs */
+	margin: auto; /* pour centrer le bouton */
+	padding: 14px 20px 14px 20px;
+	border-radius: 45px / 45px;
+	border: none; /* suppression de la bordure naturelle du bouton */
+	box-shadow: 2px 5px 10px #CCCCCC; /* ajout d'une ombre au bouton */
+}
+
+button a /* passer le texte du bouton en blanc et gras */
+{
+	color: white;
+	font-weight: bold;
+}
+
+button:hover /* changement de la couleur au survol du bouton et de la souris en pointeur */
+{
+	background: linear-gradient(#FF66D4, #8541D8);
+	cursor: pointer;
+}
+
+button:active /* changement de la couleur du bouton lors du clic pour que le visiteur est la confirmation de son clic */
+{
+	background: linear-gradient(#FF79DA, #9356DC);
+}
+
+.operate /* attribution de marges droite/gauche à la partie fonctionnement */
+{
+	margin: 0 20px 0 20px;
+}
+
+.operate h1
+{
+	font-weight: normal;
+	font-size: 25px;
+}
+
+.operate ul
+{
+	padding-left: 5px;
+}
+
+.operate li /* configuration du cadre des listes, ajout de la couleur de fond et définition de la taille */
+{
+	background-color: #F2F2F2;
+	padding: 30px 50px 30px 50px;
+	margin-bottom: 30px;
+	border-radius: 25px;
+	box-shadow: 2px 5px 10px #CCCCCC;
+	font-weight: bold;
+	font-size: 17px;
+	padding-left: 0;
+}
+
+.operate i /* définition de la couleur et de la taille des icônes, margin gauche/droite pour un décalage avec le texte et la bordure */
+{
+	color: gray;
+	font-size: 20px;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+#phone /* ajustement de la taille de l'icône du téléphone */
+{
+	font-size: 25px;
+}
+
+.operate span /* ajout d'un fond violet rond aux chiffres devant les listes,
+margin-left négatif pour les décaler sur la gauche et qu'ils soient sur la bordure du cadre */
+{
+	font-weight: normal;
+	color: white;
+	background-color: #9356DC;
+	border-radius: 100%;
+	padding: 5px 10px 5px 10px;
+	margin-left: -12px;
+}
+
+.operate li:hover /* changer la couleur de fond des liste au survol et faire apparaître la souris en pointeur */
+{
+	background-color: #F1EAFB;
+	cursor: pointer;
+}
+
+.operate li:hover .fas /* pour que les icônes changent de couleur lors du survol des listes */
+{
+	color: #9356DC;
+}
+
+#restaurant /* ajout du cadre gris à la section, mise en flex pour l'apparition en colonnes des cadres */
+{
+	background-color: #F2F2F2;
+	display: flex;
+	flex-direction: column;
+	margin-top: 70px;
+	padding: 25px 20px 50px 20px;
+}
+
+#restaurant h1
+{
+	font-weight: normal;
+	font-size: 30px;
+}
+
+.frame_restaurant /* définition des cadres contenant les images, noms et quartier des resto et bouton de favori */
+{
+	background-color: white;
+	border-radius: 20px;
+	width: 100%;
+	height: 300px;
+	margin-bottom: 25px;
+	box-shadow: 2px 5px 10px #CCCCCC;
+	display: flex;
+	flex-direction: column;
+}
+
+.frame_restaurant_img /* définition de la taille de l'image dans le cadre et border-radius en haut à gauche et droite pour coller à celui du cadre */
+{
+	width: 100%;
+	height: 200px;
+	border-radius: 20px 20px 0 0;
+}
+
+.text_restaurant /* display en flex afin d'écarter le nom + quartier du bouton de favori */
+{
+	display: flex;
+	justify-content: space-between;
+	margin: 5px 0 0 15px;
+}
+
+.text_restaurant h2
+{
+	font-weight: normal;
+	font-size: 20px;
+	padding: 0;
+	margin: 15px 0 0 0;
+}
+
+.text_restaurant p
+{
+	font-size: 18px;
+	padding: 0;
+	margin: 5px 0 0 0;
+}
+
+.text_restaurant i
+{
+	font-size: 30px;
+	color: gray;
+	margin-top: 30px;
+	margin-right: 30px;
+}
+
+footer /* ajout du cadre pour le footer et passage des textes à l'intérieur en blanc */
+{
+	background-color: #333333;
+	padding: 22px 30px 10px 30px;
+	color: white;
+}
+
+footer h1
+{
+	font-size: 20px;
+	font-weight: normal;
+	margin: 0;
+}
+
+footer li /* padding en bas pour espacer les listes */
+{
+	padding-bottom: 10px;
+}
+
+#utensils /* padding à droite pour séparer l'icône du texte */
+{
+	padding-right: 17px;
+}
+
+#handshake /* padding à droite pour séparer l'icône du texte */
+{
+	padding-right: 10px;
+}
