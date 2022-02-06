@@ -9,68 +9,68 @@
 	</head>
 	
 	<body>
-		<header> <!-- le header des pages menu est composé d'un lien de retour vers l'index, du logo du site ainsi que d'une bannière présentant le restaurant -->
-			<a href="index.html"><i class="fas fa-arrow-left"></i></a> <!-- lien vers l'index qui apparaîtra sous forme de flèche -->
-			<img src="images/ohmyfood.png" alt="Logo OhMyFood" />
-			<img src="images/delicesens.jpg" alt="Bannière" />
+		<header id="header_menu"> <!-- le header des pages menu est composé d'un lien de retour vers l'index, du logo du site ainsi que d'une bannière présentant le restaurant -->
+			<a href="index.html" id="return_to_index"><i class="fas fa-arrow-left"></i></a>
+			<img src="images/ohmyfood.png" alt="Logo OhMyFood" id="logo" />
+			<img src="images/delicesens.jpg" alt="Bannière" id="banner_menu" />
 		</header>
-		<section> <!-- la section de la page menu : le nom du restaurant, un bouton de favori et trois listes pour les entrées / plats / desserts -->
-			<div">
+		<section id="menu"> <!-- la section de la page menu : le nom du restaurant, un bouton de favori et trois listes pour les entrées / plats / desserts -->
+			<div class="menu_head">
 				<h1>Le délice des sens</h1> <!-- le nom du restaurant -->
 				<i class="far fa-heart"></i> <!-- bouton de favori -->
 			</div>
 			<ul> <!-- la première entrée de chaque liste indique la catégorie (entrée, plat ou dessert), les autres entrées listent les plats avec une courte description et le prix -->
-				<li>Entrées</li>
+				<li class="listhead">Entrées</li> <!-- ajout d'une classe sur la 1ère entrée des listes afin de pouvoir faire du CSS dessus sans impacter les autres parties de la liste -->
 				<li>
 					<h2>Tartare de thon</h2>
 					<p>Assaisonné au yuzu</p>
-					<p>25€</p>
+					<p class="price">25€</p>
 				</li>
 				<li>
 					<h2>Bouchée de homard croustillant</h2>
 					<p>Et sa farandole de petits légumes</p>
-					<p>35€</p>
+					<p class="price">35€</p>
 				</li>
 				<li>
 					<h2>Velouté de cèpes</h2>
 					<p>Aux truffes</p>
-					<p>20€</p>
+					<p class="price">20€</p>
 				</li>
 			</ul>
 			<ul>
-				<li>Plats</li>
+				<li class="listhead">Plats</li>
 				<li>
 					<h2>Poulet rôti aux herbes de Provence</h2>
 					<p>Et sa crème de truffe</p>
-					<p>40€</p>
+					<p class="price">40€</p>
 				</li>
 				<li>
 					<h2>Langouste rôtie</h2>
 					<p>Et ses légumes de saison</p>
-					<p>35€</p>
+					<p class="price">35€</p>
 				</li>
 				<li>
 					<h2>Côte de boeuf Angus</h2>
 					<p>Et sa purée de panais</p>
-					<p>44€</p>
+					<p class="price">44€</p>
 				</li>
 			</ul>
 			<ul>
-				<li>Desserts</li>
+				<li class="listhead">Desserts</li>
 				<li>
 					<h2>Farandole de desserts</h2>
 					<p>Du chef</p>
-					<p>18€</p>
+					<p class="price">18€</p>
 				</li>
 				<li>
 					<h2>Crème brulée</h2>
 					<p>Revisitée</p>
-					<p>22€</p>
+					<p class="price">22€</p>
 				</li>
 				<li>
 					<h2>Tiramisu</h2>
 					<p>À la noisette</p>
-					<p>23€</p>
+					<p class="price">23€</p>
 				</li>
 			</ul>
 			<button><a href="/">Commander</a></button>
@@ -78,8 +78,8 @@
 		<footer> <!-- le footer est indentique à celui de l'index -->
 			<h1>ohmyfood</h1>
 			<ul>
-				<li><i class="fas fa-utensils"></i>Proposer un restaurant</li>
-				<li><i class="fas fa-handshake"></i>Devenir partenaire</li>
+				<li><i class="fas fa-utensils" id="utensils"></i>Proposer un restaurant</li>
+				<li><i class="fas fa-handshake" id="handshake"></i>Devenir partenaire</li>
 				<li>Mentions légales</li>
 				<li>Contact</li>
 			</ul>

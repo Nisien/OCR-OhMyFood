@@ -291,3 +291,114 @@ footer li /* padding en bas pour espacer les listes */
 {
 	padding-right: 10px;
 }
+
+#banner_menu /* taille et largeur de la bannière */
+{
+	height: 300px;
+	width: 100%;
+}
+
+#return_to_index /* taille et placement du bouton de retour sur l'index */
+{
+	font-size: 20px;
+	margin: 18px 0 0 20px;
+}
+
+#header_menu /* le display flex est déjà ajouté par les propriétés appliquées sur les header, changement de la direction en ligne
+pour pouvoir mettre le logo et le bouton sur une même ligne, le width 100% de la bannière et le flex wrap permettent de mettre la
+bannière en dessous du logo et du bouton 
+Une position relative et un z-index permettent de s'assurer que la bannière passera en dessous de la section */
+{
+	flex-direction: row;
+	flex-wrap: wrap;
+	position: relative;
+	z-index: 1;
+}
+
+#menu /* ajout du cadre et du fond gris pour la section contenant les menus, le margin top négatif permet de faire déborder la section
+sur la bannière et la position relative avec le z-index supérieur à celui du header permet de faire passer la bannière en dessous de la section */
+{
+	background-color: #F2F2F2;
+	border-radius: 40px 40px 0 0;
+	margin-top: -60px;
+	padding: 0 25px 100px 25px;
+	position: relative;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+}
+
+.menu_head /* display flex couplé au space-between afin que le titre et le bouton de favori soit de part et d'autre du cadre */
+{
+	display: flex;
+	justify-content: space-between;
+	padding: 15px 0 15px 0;
+}
+
+.menu_head h1
+{
+	font-size: 28px;
+	font-weight: normal;
+}
+
+.menu_head i
+{
+	margin-top: 30px;
+	font-size: 30px;
+}
+
+.listhead /* text-transform afin de mettre les intitulés des catégories en majuscules, la position relative sert ici à pouvoir ajouter
+une pseudo-classe after afin d'ajouter une bordure en dessous du texte qui soit moins longue que le texte */
+{
+	text-transform: uppercase;
+	position: relative;
+}
+
+.listhead:after /* la pseudo-classe after permet d'ajouter un bloc invisible auquel on ajoute une bordure afin de donner un soulignage
+à la listhead qui soit moins long que le texte qu'elle contient */
+{
+	content: "";
+	display: block;
+	position: absolute;
+	width: 40px;
+	bottom: -10px;
+	border-bottom: 4px solid #99E2D0;
+}
+
+#menu li:not(.listhead) /* configuration du cadre des listes, la pseudo-classe not permet d'exclure la listhead afin que les changements
+apportés ici ne lui soit pas appliqué le display flex permet de placer les éléments, le space-between sert à séparer le titre
+et le paragraphe du prix et de caler ce dernier sur la droite du cadre */
+{
+	background-color: white;
+	border-radius: 20px;
+	margin: 30px 0 30px 0;
+	padding: 10px 0 15px 15px;
+	box-shadow: 2px 5px 10px #CCCCCC;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+#menu h2 /* le width 100% avec le flex-wrap définit dans la précédente balise permet au titre de rester seul en haut du cadre */
+{
+	margin: 0;
+	padding-bottom: 5px;
+	font-size: 20px;
+	font-weight: bold;
+	width: 100%;
+}
+
+#menu p
+{
+	margin: 0;
+}
+
+#menu button
+{
+	padding: 14px 50px 14px 50px;
+}
+
+.price
+{
+	padding-right: 15px;
+}
