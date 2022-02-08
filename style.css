@@ -398,7 +398,80 @@ et le paragraphe du prix et de caler ce dernier sur la droite du cadre */
 	padding: 14px 50px 14px 50px;
 }
 
-.price
+.price /* pour décoler les prix de la bordure */
 {
 	padding-right: 15px;
+}
+
+@media screen and (min-width: 992px)
+{
+	.operate ul
+	{
+		display: flex;
+	}
+
+	.operate li
+	{
+		width: 33%;
+		margin-right: 30px;
+	}
+
+	.operate li:nth-child(3)
+	{
+		margin-right: unset;
+	}
+
+	#restaurant
+	{
+		margin-top: 50px;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+
+	#restaurant h1
+	{
+		width: 100%;
+	}
+
+	.frame_restaurant
+	{
+		width: 45%;
+		margin-bottom: 50px;
+	}
+
+	footer
+	{
+		padding-left: 50px;
+	}
+
+	footer ul
+	{
+		display: flex;
+		justify-content: space-between;
+		padding-right: 100px;
+	}
+
+	#menu
+	{
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding-bottom: 50px;
+	}
+
+	.menu_head
+	{
+		width: 100%;
+	}
+
+	#menu ul
+	{
+		width: 30%;
+	}
+
+	#menu button
+	{
+		min-width: 15%;
+	}
 }
