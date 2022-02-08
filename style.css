@@ -25,6 +25,11 @@ Gris3
 #CCCCCC
 */
 
+html
+{
+	scroll-behavior: smooth; /* ajoute un effet d'ascenseur lors du clic sur un bouton qui renvoit vers une section de la page */
+}
+
 body
 {
 	font-family: 'Roboto', sans-serif; /* utilisation de la police roboto pour tous les textes de la page */
@@ -71,7 +76,7 @@ header
 {
 	display: flex;
 	align-items: baseline; /* mettre l'icône et le texte sur la même ligne */
-	justify-content: center; /* pour centre la partie localisation */
+	justify-content: center; /* pour centrer la partie localisation */
 	background-color: #E6E6E6; /* ajout du fond gris */
 	padding: 3px;
 	border-top: 3px solid #CCCCCC; /* ajout de la bordure en haut du cadre un peu plus foncée que le cadre */
@@ -111,7 +116,7 @@ header
 
 button
 {
-	background: linear-gradient(#FF79DA, #9356DC); /* couleur de fond du bouton avec linear-gradient pour un dégrader entre deux couleurs */
+	background: linear-gradient(#FF79DA, #9356DC); /* couleur de fond du bouton avec linear-gradient pour un dégradé entre deux couleurs */
 	margin: auto; /* pour centrer le bouton */
 	padding: 14px 20px 14px 20px;
 	border-radius: 45px / 45px;
@@ -255,7 +260,7 @@ margin-left négatif pour les décaler sur la gauche et qu'ils soient sur la bor
 	margin: 5px 0 0 0;
 }
 
-.text_restaurant i
+.heart
 {
 	font-size: 30px;
 	color: gray;
@@ -263,10 +268,30 @@ margin-left négatif pour les décaler sur la gauche et qu'ils soient sur la bor
 	margin-right: 30px;
 }
 
+.heart:before /* ajout de l'icone de coeur vide */
+{
+	font-family: "Font Awesome 5 Free";
+	content: "\f004";
+}
+
+.heart:hover /* remplissage du coeur lors du survol */
+{
+	cursor: pointer; /* transforme la souris en pointeur lors du survol */
+	font-weight: 900; /* pour que l'icône de coeur passe de sa version vide à sa version remplie */
+	background: linear-gradient(#FF79DA, #9356DC);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color:  transparent;
+}
+
 footer /* ajout du cadre pour le footer et passage des textes à l'intérieur en blanc */
 {
 	background-color: #333333;
 	padding: 22px 30px 10px 30px;
+	color: white;
+}
+
+footer a /* passer le texte des liens du footer en blanc */
+{
 	color: white;
 }
 
@@ -287,9 +312,16 @@ footer li /* padding en bas pour espacer les listes */
 	padding-right: 17px;
 }
 
-#handshake /* padding à droite pour séparer l'icône du texte */
+#handshake /* padding à droite pour séparer l'icône du texte, transform pour tourner l'icône et padding left pour la faire remonter */
 {
 	padding-right: 10px;
+	transform: rotate(-45deg);
+	padding-left: 10px;
+}
+
+footer li:nth-child(2) /* décalage de la 2ème ligne du footer sur la gauche pour qu'elle s'aligne avec les autres */
+{
+	margin-left: -12px;
 }
 
 #banner_menu /* taille et largeur de la bannière */
@@ -341,10 +373,10 @@ sur la bannière et la position relative avec le z-index supérieur à celui du 
 	font-weight: normal;
 }
 
-.menu_head i
+.menu_head .heart
 {
-	margin-top: 30px;
-	font-size: 30px;
+	margin-top: 27px;
+	margin-right: 25px;
 }
 
 .listhead /* text-transform afin de mettre les intitulés des catégories en majuscules, la position relative sert ici à pouvoir ajouter
@@ -366,17 +398,29 @@ une pseudo-classe after afin d'ajouter une bordure en dessous du texte qui soit 
 }
 
 #menu li:not(.listhead) /* configuration du cadre des listes, la pseudo-classe not permet d'exclure la listhead afin que les changements
-apportés ici ne lui soit pas appliqué le display flex permet de placer les éléments, le space-between sert à séparer le titre
-et le paragraphe du prix et de caler ce dernier sur la droite du cadre */
+apportés ici ne lui soit pas appliqué
+overflow hidden pour éviter que l'apparition du cadre vert lors de l'animation ne dépasse des arrondis du cadre  */
 {
 	background-color: white;
 	border-radius: 20px;
 	margin: 30px 0 30px 0;
-	padding: 10px 0 15px 15px;
+	padding-left: 15px;
 	box-shadow: 2px 5px 10px #CCCCCC;
+	display: flex;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.menu_li /* le display flex permet de placer les éléments, le space-between sert à séparer le titre
+et le paragraphe du prix pour caler ce dernier sur la droite du cadre
+le width à 100% pour que la balise occupe toujours 100% de l'espace disponible, pour que le bloc se réduise progressivement lors de
+l'animation de sélection du plat */
+{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	padding: 10px 0 15px 0;
+	width: 100%;
 }
 
 #menu h2 /* le width 100% avec le flex-wrap définit dans la précédente balise permet au titre de rester seul en haut du cadre */
@@ -403,7 +447,40 @@ et le paragraphe du prix et de caler ce dernier sur la droite du cadre */
 	padding-right: 15px;
 }
 
-@media screen and (min-width: 992px)
+.animation /* le cadre vert qui apparaît lors de la sélection d'un plat */
+{
+	background-color: #99E2D0;
+	border-radius: 0 20px 20px 0;
+	width: 0px; /* width initiale à 0 pour que le cadre ne soit pas visible */
+	transition: width 1s; /* ici l'animation consiste simplement à augmenter la width pour faire apparaître le cadre vert */
+}
+
+#menu li:not(.listhead):hover .animation /* lorsque le cadre du plat sera survolé la width du cadre vert augmentera pour donner l'effet d'apparition du cadre */
+{
+	width: 75px;
+}
+
+.animation i /* les paramètres de l'icône de vérification présente dans le cadre vert
+même couleur que le cadre mais avec un fond blanc qui a un border-radius de 100% pour faire un rond */
+{
+	color: #99E2D0;
+	background-color: white;
+	border-radius: 100%;
+	padding: 4px;
+	margin: 25px 0 0 20px;
+	opacity: 0; /* l'oppacité commence à 0 pour que l'icône soit invisible pendant le déploiement du cadre */
+	transition: opacity 400ms; /* augmentation de l'opacité pour que l'icône apparaisse */
+	transition-delay: 650ms; /* délais pour que l'apparition de l'icône se fasse après que le cadre se soit entièrement déployé */
+}
+
+#menu li:not(.listhead):hover .animation i /* passage de l'opacité à 1 pour rendre l'icône complétement visible */
+{
+	opacity: 1;
+}
+
+
+
+@media screen and (min-width: 992px) /* media queries pour que l'affichage change sur un écran plus large qu'une tablette */
 {
 	.operate ul
 	{
