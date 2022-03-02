@@ -471,14 +471,13 @@ même couleur que le cadre mais avec un fond blanc qui a un border-radius de 100
 	border-radius: 100%;
 	padding: 4px;
 	margin: 25px 0 0 20px;
-	opacity: 0;
-	transition: opacity 400ms;
-	transition-delay: 650ms;
+	transition: transform 800ms;
+	transition-delay: 225ms;
 }
 
-#menu li:not(.listhead):hover .animation i /* passage de l'opacité à 1 pour rendre l'icône complétement visible */
+#menu li:not(.listhead):hover .animation i /* rotation de l'icône pendant l'apparition du cadre vert */
 {
-	opacity: 1;
+	transform: rotate(360deg);
 }
 
 #loader_background /* le fond de l'animation de chargement, position fixed avec hauteur et largeur de 100% pour toujours occuper toute la page, z-index pour passer par dessus la page,
