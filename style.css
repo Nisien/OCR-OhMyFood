@@ -481,6 +481,85 @@ même couleur que le cadre mais avec un fond blanc qui a un border-radius de 100
 	opacity: 1;
 }
 
+#loader_background /* le fond de l'animation de chargement, position fixed avec hauteur et largeur de 100% pour toujours occuper toute la page, z-index pour passer par dessus la page,
+une couleur blanche avec une opacité pour un effet de transparence pour voir la page à l'arrière, le flex avec justify et align pour centrer les spinner,
+animation via keyframe pour cacher le loader après quelques secondes */
+{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+	background-color: white;
+	opacity: 0.9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: hide	500ms forwards;
+	animation-delay: 2s;
+}
+
+#loader_spinner /* spinner composé de 3 éléments via les pseudo propriétés before et after, le z-index plus élevé que le background pour que le spinner ne soit pas caché,
+bordure trasparente avec seulement le haut et la droite en couleur pour avoir un demi-cercle, animation spin via keyframe */
+{
+	position: relative;
+	width: 250px;
+	height: 250px;
+	z-index: 11;
+	border: 3px solid transparent;
+	border-top-color: #9356DC;
+	border-right-color: #9356DC;
+	border-radius: 50%;
+	animation: spin 2s linear infinite;
+}
+
+#loader_spinner:before
+{
+	content: "";
+	position: absolute;
+	top: 25px;
+	left: 25px;
+	right: 25px;
+	bottom: 25px;
+	border: 3px solid transparent;
+	border-top-color: #FF79DA;
+	border-radius: 50%;
+	animation: spin 3s linear infinite;
+}
+
+#loader_spinner:after
+{
+	content: "";
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	right: 50px;
+	bottom: 50px;
+	border: 3px solid transparent;
+	border-top-color: #99E2D0;
+	border-radius: 50%;
+	animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes hide
+{
+	100%
+	{
+		opacity: 0;
+		visibility: hidden;
+	}
+}
 
 
 @media screen and (min-width: 992px) /* media queries pour que l'affichage change sur un écran plus large qu'une tablette */
