@@ -36,9 +36,9 @@ body
 	margin: auto; /* pour centre la page */
 }
 
-h1
+h1, h2
 {
-	font-family: 'Shrikhand', cursive; /* utilisation de la police shrikhand pour les titres h1 */
+	font-family: 'Shrikhand', cursive; /* utilisation de la police shrikhand pour les titres */
 }
 
 ul
@@ -91,8 +91,10 @@ header
 
 .info
 {
+	width: 100%;
 	display: flex;
 	flex-direction: column; /* flex pour aligner les éléments en colonnes */
+	justify-content: center;
 	background-color: #F2F2F2; /* couleur de fond de la partie info */
 	padding-top: 15px;
 	padding-bottom: 50px;
@@ -114,18 +116,18 @@ header
 	margin: 15px 40px 30px 40px;
 }
 
+form
+{
+	margin: auto;
+}
+
 button
 {
 	background: linear-gradient(#FF79DA, #9356DC); /* couleur de fond du bouton avec linear-gradient pour un dégradé entre deux couleurs */
-	margin: auto; /* pour centrer le bouton */
 	padding: 14px 20px 14px 20px;
 	border-radius: 45px / 45px;
 	border: none; /* suppression de la bordure naturelle du bouton */
 	box-shadow: 2px 5px 10px #CCCCCC; /* ajout d'une ombre au bouton */
-}
-
-button a /* passer le texte du bouton en blanc et gras */
-{
 	color: white;
 	font-weight: bold;
 }
@@ -146,7 +148,7 @@ button:active /* changement de la couleur du bouton lors du clic pour que le vis
 	margin: 0 20px 0 20px;
 }
 
-.operate h1
+.operate h2
 {
 	font-weight: normal;
 	font-size: 25px;
@@ -213,7 +215,7 @@ margin-left négatif pour les décaler sur la gauche et qu'ils soient sur la bor
 	padding: 25px 20px 50px 20px;
 }
 
-#restaurant h1
+#restaurant h2
 {
 	font-weight: normal;
 	font-size: 30px;
@@ -245,7 +247,7 @@ margin-left négatif pour les décaler sur la gauche et qu'ils soient sur la bor
 	margin: 5px 0 0 15px;
 }
 
-.text_restaurant h2
+.text_restaurant h3
 {
 	font-weight: normal;
 	font-size: 20px;
@@ -367,7 +369,7 @@ sur la bannière et la position relative avec le z-index supérieur à celui du 
 	padding: 15px 0 15px 0;
 }
 
-.menu_head h1
+.menu_head h2
 {
 	font-size: 28px;
 	font-weight: normal;
@@ -423,7 +425,7 @@ l'animation de sélection du plat */
 	width: 100%;
 }
 
-#menu h2 /* le width 100% avec le flex-wrap définit dans la précédente balise permet au titre de rester seul en haut du cadre */
+#menu h3 /* le width 100% avec le flex-wrap définit dans la précédente balise permet au titre de rester seul en haut du cadre */
 {
 	margin: 0;
 	padding-bottom: 5px;
@@ -439,6 +441,7 @@ l'animation de sélection du plat */
 
 #menu button
 {
+	margin: auto;
 	padding: 14px 50px 14px 50px;
 }
 
@@ -468,9 +471,9 @@ même couleur que le cadre mais avec un fond blanc qui a un border-radius de 100
 	border-radius: 100%;
 	padding: 4px;
 	margin: 25px 0 0 20px;
-	opacity: 0; /* l'oppacité commence à 0 pour que l'icône soit invisible pendant le déploiement du cadre */
-	transition: opacity 400ms; /* augmentation de l'opacité pour que l'icône apparaisse */
-	transition-delay: 650ms; /* délais pour que l'apparition de l'icône se fasse après que le cadre se soit entièrement déployé */
+	opacity: 0;
+	transition: opacity 400ms;
+	transition-delay: 650ms;
 }
 
 #menu li:not(.listhead):hover .animation i /* passage de l'opacité à 1 pour rendre l'icône complétement visible */
@@ -506,7 +509,7 @@ même couleur que le cadre mais avec un fond blanc qui a un border-radius de 100
 		justify-content: space-around;
 	}
 
-	#restaurant h1
+	#restaurant h2
 	{
 		width: 100%;
 	}

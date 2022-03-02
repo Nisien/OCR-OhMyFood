@@ -10,7 +10,7 @@
 	
 	<body>
 		<header> <!-- le header est composé de 3 parties : le logo, une partie avec la localisation et une autre avec l'accroche et un bouton emmenant vers la liste des restaurants  -->
-			<img src="images/ohmyfood.png" alt="Logo OhMyFood" id="logo" /> <!-- logo du site -->
+			<img src="images/ohmyfood.png" alt="Logo OhMyFood" id="logo" />
 			<div>
 				<div class="location"> <!-- div pour la localisation composée d'une icône et du lieu -->
 					<i class="fas fa-map-marker-alt"></i>
@@ -19,12 +19,12 @@
 				<div class="info"> <!-- phrases d'accorche avec le bouton renvoyant vers la liste des restaurants -->
 					<h1>Réserver le menu qui vous convient</h1>
 					<p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
-					<button><a href="#restaurant">Explorer nos restaurants</a></button> <!-- lien qui sert de bouton pour renvoyer vers la parties restaurant de la page -->
+					<form action="#restaurant"><button type="submit">Explorer nos restaurants</button></form> <!-- bouton dans un form afin de pouvoir faire un renvoi vers la partie restaurants de la page -->
 				</div>
 			</div>
 		</header>
 		<section class="operate"> <!-- 1ère section composée d'un titre et d'une liste pour indiquer le fonctionnement du site au visiteur -->
-			<h1>Fonctionnement</h1>
+			<h2>Fonctionnement</h2>
 			<ul> <!-- les numéros sont dans des spans pour pouvoir les tagger dans le CSS afin de les décaler -->
 				<li><span>1</span><i class="fas fa-mobile-alt" id="phone"></i>Choisissez un restaurant</li>
 				<li><span>2</span><i class="fas fa-list-ul"></i>Composez votre menu</li>
@@ -32,12 +32,12 @@
 			</ul>
 		</section>
 		<section id="restaurant"> <!-- 2ème section qui est composée des différents cadres présentant les resautrants avec les liens pour renvoyer vers les pages HTML correspondantes -->
-			<h1>Restaurants</h1>
+			<h2>Restaurants</h2>
 			<div class="frame_restaurant"> <!-- chaque cadre est composé d'un lien sont forme d'image, du nom du restaurant et son quartier qui servent également de lien vers la page HTML correspondante ainsi que d'une icône qui servira à terme à pouvoir faire des favoris pour le visiteur -->
 				<a href="menu3.html" class="frame_restaurant_img"><img src="images/palettegout.jpg" alt="La palette du goût" class="frame_restaurant_img" /></a>
 				<div class="text_restaurant">
 					<a href="menu3.html">
-					<h2>La palette du goût</h2>
+					<h3>La palette du goût</h3>
 					<p>Ménilmontant</p>
 					</a>
 					<span class="heart"></span> <!-- span qui sert à ajouter l'icône de coeur via les pseudo-propriétés before et after afin de pouvoir faire l'animation du "remplissage" du coeur -->
@@ -47,7 +47,7 @@
 				<a href="menu2.html" class="frame_restaurant_img"><img src="images/noteenchantee.jpg" alt="La note enchantée" class="frame_restaurant_img" /></a>
 				<div class="text_restaurant">
 					<a href="menu2.html">
-					<h2>La note enchantée</h2>
+					<h3>La note enchantée</h3>
 					<p>Charonne</p>
 					</a>
 					<span class="heart"></span>
@@ -57,7 +57,7 @@
 				<a href="menu1.html" class="frame_restaurant_img"><img src="images/alafrancaise.jpg" alt="À la française" class="frame_restaurant_img" /></a>
 				<div class="text_restaurant">
 					<a href="menu1.html">
-					<h2>À la française</h2>
+					<h3>À la française</h3>
 					<p>Cité Rouge</p>
 					</a>
 					<span class="heart"></span>
@@ -67,7 +67,7 @@
 				<a href="menu4.html" class="frame_restaurant_img"><img src="images/delicesens.jpg" alt="Le délice des sens" class="frame_restaurant_img" /></a>
 				<div class="text_restaurant">
 					<a href="menu4.html">
-					<h2>Le délice des sens</h2>
+					<h3>Le délice des sens</h3>
 					<p>Folie-Méricourt</p>
 					</a>
 					<span class="heart"></span>
