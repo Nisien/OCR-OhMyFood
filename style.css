@@ -121,7 +121,7 @@ form
 	margin: auto;
 }
 
-button
+.button_resto
 {
 	background: linear-gradient(#FF79DA, #9356DC); /* couleur de fond du bouton avec linear-gradient pour un dégradé entre deux couleurs */
 	padding: 14px 20px 14px 20px;
@@ -130,15 +130,16 @@ button
 	box-shadow: 2px 5px 10px #CCCCCC; /* ajout d'une ombre au bouton */
 	color: white;
 	font-weight: bold;
+	margin: auto; /* pour centrer le bouton */
 }
 
-button:hover /* changement de la couleur au survol du bouton et de la souris en pointeur */
+.button_resto:hover /* changement de la couleur au survol du bouton et de la souris en pointeur */
 {
 	background: linear-gradient(#FF66D4, #8541D8);
 	cursor: pointer;
 }
 
-button:active /* changement de la couleur du bouton lors du clic pour que le visiteur est la confirmation de son clic */
+.button_resto:active /* changement de la couleur du bouton lors du clic pour que le visiteur est la confirmation de son clic */
 {
 	background: linear-gradient(#FF79DA, #9356DC);
 }

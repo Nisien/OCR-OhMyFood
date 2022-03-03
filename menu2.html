@@ -9,23 +9,23 @@
 	</head>
 	
 	<body>
-		<header id="header_menu"> <!-- le header des pages menu est composé d'un lien de retour vers l'index, du logo du site ainsi que d'une bannière présentant le restaurant -->
+		<header id="header_menu">
 			<a href="index.html" id="return_to_index"><i class="fas fa-arrow-left"></i></a>
 			<img src="images/ohmyfood.png" alt="Logo OhMyFood" id="logo" />
 			<img src="images/noteenchantee.jpg" alt="Bannière" id="banner_menu" />
 		</header>
-		<section id="menu"> <!-- la section de la page menu : le nom du restaurant, un bouton de favori et trois listes pour les entrées / plats / desserts -->
+		<section id="menu">
 			<div class="menu_head">
-				<h2>La note enchantée</h2> <!-- le nom du restaurant -->
-				<span class="heart"></span> <!-- bouton de favori -->
+				<h2>La note enchantée</h2>
+				<span class="heart"></span>
 			</div>
-			<ul> <!-- la première entrée de chaque liste indique la catégorie (entrée, plat ou dessert), les autres entrées listent les plats avec une courte description et le prix -->
-				<li class="listhead">Entrées</li> <!-- ajout d'une classe sur la 1ère entrée des listes afin de pouvoir appliquer des propriétés CSS dessus sans impacter les autres parties de la liste -->
+			<ul>
+				<li class="listhead">Entrées</li>
 				<li>
-					<div class="menu_li"><h3>Ravioles de foie gras </h3> <!-- la div menu_li permet de rassembler le nom, la description et le prix en un seul bloc -->
+					<div class="menu_li"><h3>Ravioles de foie gras </h3>
 					<p>Accompagnés de leur crème à la truffe</p>
 					<p class="price">25€</p></div>
-					<div class="animation"><i class="fas fa-check"></i></div> <!-- cette div sert pour l'animation lors de la sélection d'un plat -->
+					<div class="animation"><i class="fas fa-check"></i></div>
 				</li>
 				<li>
 					<div class="menu_li"><h3>Caviar osciètre </h3>
@@ -88,9 +88,9 @@
 					<div class="animation"><i class="fas fa-check"></i></div>
 				</li>
 			</ul>
-			<button>Commander</button>
+			<button class="button_resto">Commander</button>
 		</section>
-		<footer> <!-- le footer est indentique à celui de l'index -->
+		<footer>
 			<h1>ohmyfood</h1>
 			<ul>
 				<li><a href="/"><i class="fas fa-utensils" id="utensils"></i>Proposer un restaurant</a></li>
