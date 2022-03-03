@@ -116,11 +116,6 @@ header
 	margin: 15px 40px 30px 40px;
 }
 
-form
-{
-	margin: auto;
-}
-
 .button_resto
 {
 	background: linear-gradient(#FF79DA, #9356DC); /* couleur de fond du bouton avec linear-gradient pour un dégradé entre deux couleurs */
@@ -135,8 +130,9 @@ form
 
 .button_resto:hover /* changement de la couleur au survol du bouton et de la souris en pointeur */
 {
-	background: linear-gradient(#FF66D4, #8541D8);
+	background: linear-gradient(#FF80DB, #A06BE1);
 	cursor: pointer;
+	box-shadow: 2px 5px 10px #A6A6A6;
 }
 
 .button_resto:active /* changement de la couleur du bouton lors du clic pour que le visiteur est la confirmation de son clic */
@@ -263,27 +259,64 @@ margin-left négatif pour les décaler sur la gauche et qu'ils soient sur la bor
 	margin: 5px 0 0 0;
 }
 
-.heart
+.heart_main /* la balise qui contient les deux versions de coeur du bouton favori */
 {
-	font-size: 30px;
-	color: gray;
 	margin-top: 30px;
 	margin-right: 30px;
 }
 
-.heart:before /* ajout de l'icone de coeur vide */
+.heart_empty /* la version vide du coeur, en position absolute afin de ne pas être décalé par la version remplie */
+{
+	font-size: 30px;
+	color: gray;
+	position: absolute;
+}
+
+.heart_empty:before /* ajout de l'icone de coeur via font awesome, en version vide par défaut */
 {
 	font-family: "Font Awesome 5 Free";
 	content: "\f004";
 }
 
-.heart:hover /* remplissage du coeur lors du survol */
+.heart_filled /* la version remplie du coeur, en opacity 0 pour être invisible */
 {
-	cursor: pointer; /* transforme la souris en pointeur lors du survol */
-	font-weight: 900; /* pour que l'icône de coeur passe de sa version vide à sa version remplie */
+	font-size: 30px;
 	background: linear-gradient(#FF79DA, #9356DC);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color:  transparent;
+	opacity: 0;
+}
+
+.heart_filled:before /* ajout de l'icone de coeur via font awesome, font-weight 900 pour avoir la version remplie */
+{
+	font-family: "Font Awesome 5 Free";
+	content: "\f004";
+	font-weight: 900;
+}
+
+.heart_main:hover /* changement du curseur lors du survol du bouton favori */
+{
+	cursor: pointer;
+}
+
+.heart_main:hover .heart_empty /* changement de la couleur de la version vide du coeur au survol du bouton favori pour correspondre à la couleur de la version remplie */
+{
+	background: linear-gradient(#FF79DA, #9356DC);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color:  transparent;
+}
+
+.heart_main:hover .heart_filled /* déclenchement de l'animation d'apparition du coeur rempli lors du survol du bouton favori */
+{
+	animation: appear 300ms forwards;
+}
+
+@keyframes appear /* animation via keyframe pour rendre visible le coeur rempli en mettant son opacity à 1 */
+{
+	100%
+	{
+		opacity: 1;
+	}
 }
 
 footer /* ajout du cadre pour le footer et passage des textes à l'intérieur en blanc */
@@ -376,7 +409,7 @@ sur la bannière et la position relative avec le z-index supérieur à celui du 
 	font-weight: normal;
 }
 
-.menu_head .heart
+.menu_head .heart_main
 {
 	margin-top: 27px;
 	margin-right: 25px;
@@ -495,7 +528,7 @@ animation via keyframe pour cacher le loader après quelques secondes */
 	justify-content: center;
 	align-items: center;
 	animation: hide	500ms forwards;
-	animation-delay: 2s;
+	animation-delay: 1s;
 }
 
 #loader_spinner /* spinner composé de 3 éléments via les pseudo propriétés before et after, le z-index plus élevé que le background pour que le spinner ne soit pas caché,
