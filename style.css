@@ -601,6 +601,29 @@ bordure trasparente avec seulement le haut et la droite en couleur pour avoir un
 	}
 }
 
+#menu ul
+{
+	opacity: 0;
+}
+
+#menu ul:nth-child(2)
+{
+	animation: appear 2s forwards;
+	animation-delay: 250ms;
+}
+
+#menu ul:nth-child(3)
+{
+	animation: appear 2s forwards;
+	animation-delay: 750ms;
+}
+
+#menu ul:nth-child(4)
+{
+	animation: appear 2s forwards;
+	animation-delay: 1.25s;
+}
+
 
 @media screen and (min-width: 992px) /* media queries pour que l'affichage change sur un écran plus large qu'une tablette */
 {
