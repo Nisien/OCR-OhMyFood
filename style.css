@@ -308,7 +308,7 @@ margin-left négatif pour les décaler sur la gauche et qu'ils soient sur la bor
 
 .heart_main:hover .heart_filled /* déclenchement de l'animation d'apparition du coeur rempli lors du survol du bouton favori */
 {
-	animation: appear 300ms forwards;
+	animation: appear 500ms forwards;
 }
 
 @keyframes appear /* animation via keyframe pour rendre visible le coeur rempli en mettant son opacity à 1 */
@@ -457,6 +457,9 @@ l'animation de sélection du plat */
 	justify-content: space-between;
 	padding: 10px 0 15px 0;
 	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap; /* pour que les éléments dans ce conteneur n'aillent pas à la ligne */
 }
 
 #menu h3 /* le width 100% avec le flex-wrap définit dans la précédente balise permet au titre de rester seul en haut du cadre */
@@ -466,11 +469,15 @@ l'animation de sélection du plat */
 	font-size: 20px;
 	font-weight: bold;
 	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 #menu p
 {
 	margin: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 #menu button
